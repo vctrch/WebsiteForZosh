@@ -29,17 +29,17 @@ In the Linux Terminal:
 
 **Ctrl+C** does not copy in this Terminal. If a command is running, **Ctrl+C** stops it.
 
-### 1. Turn on Linux
+### Turn on Linux
 
 Linux is off until you turn it on. If you already see a Terminal app and a **Linux files** folder in the Files app, skip to step 2.
 
-1. At the bottom right, select the time.
-2. Select **Settings**.
-3. Select **About ChromeOS**.
-4. Select **Developers**.
-5. Next to **Linux development environment**, select **Set up**.
-6. Follow the screens. Setup can take 10 minutes or more.
-7. A Terminal window opens when setup finishes. You can close it and open it again later.
+- At the bottom right, select the time.
+- Select **Settings**.
+- Select **About ChromeOS**.
+- Select **Developers**.
+- Next to **Linux development environment**, select **Set up**.
+- Follow the screens. Setup can take 10 minutes or more.
+- A Terminal window opens when setup finishes. You can close it and open it again later.
 
 The setup screens ask for a username and a disk size. They do not ask you to create a password.
 
@@ -47,12 +47,12 @@ When a command starts with `sudo`, it usually runs immediately. If the Terminal 
 
 A work or school Chromebook can hide **Linux development environment**. If that row is missing, Linux is turned off by the administrator and these steps cannot continue on that device.
 
-### 2. Open Terminal
+### Open Terminal
 
-1. Select the launcher, the circle on the shelf.
-2. Type `Terminal`.
-3. Open **Terminal**. The icon is a black rectangle with a small prompt.
-4. To keep it easy to find, right-click the Terminal icon on the shelf and select **Pin**.
+- Select the launcher, the circle on the shelf.
+- Type `Terminal`.
+- Open **Terminal**. The icon is a black rectangle with a small prompt.
+- To keep it easy to find, right-click the Terminal icon on the shelf and select **Pin**.
 
 Each new Terminal window starts in your Linux home folder. Check that with:
 
@@ -62,7 +62,7 @@ pwd
 
 The line looks like `/home/yourname`. `yourname` is the username you chose when Linux was set up.
 
-### 3. Install Node.js
+### Install Node.js
 
 Node.js is the program that installs this project's tools and starts the website. npm comes with Node.js. npm is the command that downloads those tools.
 
@@ -109,14 +109,13 @@ If the Terminal says `nvm: command not found`, close every Terminal window, open
 
 If the Terminal says `node: command not found`, run `nvm install 24` again in that same new window.
 
-### 4. Put the project in Linux
+### Put the project in Linux
 
 The Terminal only sees files inside **Linux files**. A copy in Downloads or Google Drive is outside Linux, so `npm` cannot see it from there.
 
 Download the project into your Linux home folder:
 
 ```bash
-cd
 git clone https://github.com/vctrch/WebsiteForZosh.git
 cd WebsiteForZosh
 pwd
@@ -124,10 +123,10 @@ pwd
 
 What each line does:
 
-1. `cd` with nothing after it returns to your home folder.
-2. `git clone` copies the project from GitHub into a new folder named `WebsiteForZosh`.
-3. `cd WebsiteForZosh` moves into that folder. The capital letters matter. `websiteforzosh` is a different name inside Linux.
-4. `pwd` prints the folder you are in.
+- `cd` with nothing after it returns to your home folder.
+- `git clone` copies the project from GitHub into a new folder named `WebsiteForZosh`.
+- `cd WebsiteForZosh` moves into that folder. The capital letters matter. `websiteforzosh` is a different name inside Linux.
+- `pwd` prints the folder you are in.
 
 The end of the `pwd` line should be `WebsiteForZosh`. An example is `/home/yourname/WebsiteForZosh`.
 
@@ -135,7 +134,7 @@ If `git clone` says the destination already exists, the folder is already there.
 
 You can also see the folder in the Files app under **Linux files**.
 
-### 5. Install this project's files
+### Install this project's files
 
 Run this once, from the `WebsiteForZosh` folder:
 
@@ -149,7 +148,7 @@ You should see a short summary that ends with the number of packages added. Leav
 
 Run `npm install` again later only after `package.json` changes.
 
-### 6. Start the website
+### Start the website
 
 In the same Terminal window, run:
 
@@ -167,10 +166,10 @@ The printed address may say `localhost` or `127.0.0.1`. Those are the same compu
 
 Open that address in the Chromebook's Chrome browser:
 
-1. In Terminal, select the address with the touchpad or mouse.
-2. Press **Ctrl+Shift+C** to copy it.
-3. Open Chrome.
-4. Click the address bar, press **Ctrl+V**, and press **Enter**.
+- In Terminal, select the address with the touchpad or mouse.
+- Press **Ctrl+Shift+C** to copy it.
+- Open Chrome.
+- Click the address bar, press **Ctrl+V**, and press **Enter**.
 
 You should see the Zosh page, with the heading "A calmer kind of website."
 
@@ -180,15 +179,15 @@ Chrome on the Chromebook can open that address while the Linux Terminal is runni
 
 To stop the site, click the Terminal window and press **Ctrl+C**.
 
-### 7. Change the words and see the result
+### Change the words and see the result
 
 Keep `npm run dev` running.
 
-1. Open the Files app.
-2. Open **Linux files**, then **WebsiteForZosh**, then **src**.
-3. Right-click `content.ts`, choose **Open with**, then **Text**. The Files app shows that choice. Chrome does not.
-4. Change the text inside the quotes. The page heading is `hero.title`. The menu labels are `navItems`.
-5. Save with **Ctrl+S**.
+- Open the Files app.
+- Open **Linux files**, then **WebsiteForZosh**, then **src**.
+- Right-click `content.ts`, choose **Open with**, then **Text**. The Files app shows that choice. Chrome does not.
+- Change the text inside the quotes. The page heading is `hero.title`. The menu labels are `navItems`.
+- Save with **Ctrl+S**.
 
 The browser refreshes the page on its own. You do not need to run `npm run dev` again.
 
@@ -202,14 +201,13 @@ Other files you may want later:
 | `src/App.tsx` | The order of the sections |
 | `index.html` | The browser-tab title |
 
-### 8. Run the tests
+### Run the tests
 
 A test is an automatic check. These tests confirm the page shows its sections and the contact form asks for a name, a real email address, and a message of at least 10 characters.
 
 `npm run dev` keeps its Terminal window busy. Open Terminal again from the launcher. **Ctrl+Shift+T** reopens a closed Chrome tab. It does not open a second Linux Terminal. In the new Terminal window, run:
 
 ```bash
-cd
 cd WebsiteForZosh
 npm test
 ```
@@ -224,7 +222,7 @@ npm run test:watch
 
 Stop watch mode with **Ctrl+C**.
 
-### 9. Build a finished copy
+### Build a finished copy
 
 The development site in step 6 is for editing. A build is the finished copy of the site.
 
@@ -273,11 +271,11 @@ In Command Prompt:
 - To copy an address while the site is running, select the address, then right-click it and choose **Copy**.
 - **Ctrl+V** pastes into the browser address bar.
 
-### 1. Open Command Prompt
+### Open Command Prompt
 
-1. Select **Start**.
-2. Type `Command Prompt`.
-3. Open **Command Prompt**.
+- Select **Start**.
+- Type `Command Prompt`.
+- Open **Command Prompt**.
 
 This window starts in your user folder. Check that with:
 
@@ -287,14 +285,14 @@ cd
 
 The line looks like `C:\Users\yourname`. `yourname` is your Windows user name.
 
-### 2. Install Node.js
+### Install Node.js
 
 Node.js is the program that installs this project's tools and starts the website. npm comes with Node.js. npm is the command that downloads those tools.
 
-1. Open [https://nodejs.org/](https://nodejs.org/).
-2. Download the Windows installer labeled **LTS**.
-3. Open the downloaded file and finish the installer. The default choices are fine.
-4. Close Command Prompt, then open it again from the Start menu. A window that was open during installation can miss the new program.
+- Open [https://nodejs.org/](https://nodejs.org/).
+- Download the Windows installer labeled **LTS**.
+- Open the downloaded file and finish the installer. The default choices are fine.
+- Close Command Prompt, then open it again from the Start menu. A window that was open during installation can miss the new program.
 
 Check the install:
 
@@ -312,13 +310,13 @@ npm -v
 
 If Command Prompt says `node` is not recognized, close it, open a new Command Prompt, and run `node -v` again.
 
-### 3. Install Git
+### Install Git
 
 Git is the program that downloads this project.
 
-1. Open [https://git-scm.com/download/win](https://git-scm.com/download/win).
-2. Run the installer. The default choices are fine.
-3. Close Command Prompt and open it again from the Start menu.
+- Open [https://git-scm.com/download/win](https://git-scm.com/download/win).
+- Run the installer. The default choices are fine.
+- Close Command Prompt and open it again from the Start menu.
 
 Check the install:
 
@@ -328,7 +326,7 @@ git --version
 
 A version number means git is ready.
 
-### 4. Put the project on this computer
+### Put the project on this computer
 
 In Command Prompt, run:
 
@@ -336,15 +334,14 @@ In Command Prompt, run:
 cd %USERPROFILE%
 git clone https://github.com/vctrch/WebsiteForZosh.git
 cd WebsiteForZosh
-cd
 ```
 
 What each line does:
 
-1. `cd %USERPROFILE%` returns to your user folder, such as `C:\Users\yourname`.
-2. `git clone` copies the project from GitHub into a new folder named `WebsiteForZosh`.
-3. `cd WebsiteForZosh` moves into that folder.
-4. `cd` with nothing after it prints the folder you are in.
+- `cd %USERPROFILE%` returns to your user folder, such as `C:\Users\yourname`.
+- `git clone` copies the project from GitHub into a new folder named `WebsiteForZosh`.
+- `cd WebsiteForZosh` moves into that folder.
+- `cd` with nothing after it prints the folder you are in.
 
 The end of that last line should be `WebsiteForZosh`. An example is `C:\Users\yourname\WebsiteForZosh`.
 
@@ -352,7 +349,7 @@ If `git clone` says the destination already exists, the folder is already there.
 
 You can also see the folder in File Explorer under your user folder.
 
-### 5. Install this project's files
+### Install this project's files
 
 Run this once, from the `WebsiteForZosh` folder:
 
@@ -366,7 +363,7 @@ You should see a short summary that ends with the number of packages added. Leav
 
 Run `npm install` again later only after `package.json` changes.
 
-### 6. Start the website
+### Start the website
 
 In the same Command Prompt window, run:
 
@@ -384,10 +381,10 @@ The printed address may say `localhost` or `127.0.0.1`. Those are the same compu
 
 Open that address in Edge or Chrome:
 
-1. In Command Prompt, select the address.
-2. Right-click the selection and choose **Copy**.
-3. Open Edge or Chrome.
-4. Click the address bar, press **Ctrl+V**, and press **Enter**.
+- In Command Prompt, select the address.
+- Right-click the selection and choose **Copy**.
+- Open Edge or Chrome.
+- Click the address bar, press **Ctrl+V**, and press **Enter**.
 
 You should see the Zosh page, with the heading "A calmer kind of website."
 
@@ -397,15 +394,15 @@ Keep the Command Prompt window open. Closing it stops the site.
 
 To stop the site, click the Command Prompt window and press **Ctrl+C**.
 
-### 7. Change the words and see the result
+### Change the words and see the result
 
 Keep `npm run dev` running.
 
-1. Open File Explorer.
-2. Open your user folder, then **WebsiteForZosh**, then **src**.
-3. Right-click `content.ts`, choose **Open with**, then **Notepad**.
-4. Change the text inside the quotes. The page heading is `hero.title`. The menu labels are `navItems`.
-5. Save with **Ctrl+S**.
+- Open File Explorer.
+- Open your user folder, then **WebsiteForZosh**, then **src**.
+- Right-click `content.ts`, choose **Open with**, then **Notepad**.
+- Change the text inside the quotes. The page heading is `hero.title`. The menu labels are `navItems`.
+- Save with **Ctrl+S**.
 
 The browser refreshes the page on its own. You do not need to run `npm run dev` again.
 
@@ -419,7 +416,7 @@ Other files you may want later:
 | `src/App.tsx` | The order of the sections |
 | `index.html` | The browser-tab title |
 
-### 8. Run the tests
+### Run the tests
 
 A test is an automatic check. These tests confirm the page shows its sections and the contact form asks for a name, a real email address, and a message of at least 10 characters.
 
@@ -441,7 +438,7 @@ npm run test:watch
 
 Stop watch mode with **Ctrl+C**.
 
-### 9. Build a finished copy
+### Build a finished copy
 
 The development site in step 6 is for editing. A build is the finished copy of the site.
 
@@ -491,11 +488,11 @@ In Terminal:
 
 **Command-C** leaves a running site alone. **Control-C** stops it.
 
-### 1. Open Terminal
+### Open Terminal
 
-1. Press **Command-Space** to open Spotlight search.
-2. Type `Terminal`.
-3. Press **Return**.
+- Press **Command-Space** to open Spotlight search.
+- Type `Terminal`.
+- Press **Return**.
 
 This window starts in your home folder. Check that with:
 
@@ -505,14 +502,14 @@ pwd
 
 The line looks like `/Users/yourname`. `yourname` is your Mac user name.
 
-### 2. Install Node.js
+### Install Node.js
 
 Node.js is the program that installs this project's tools and starts the website. npm comes with Node.js. npm is the command that downloads those tools.
 
-1. Open [https://nodejs.org/](https://nodejs.org/).
-2. Download the macOS installer labeled **LTS**.
-3. Open the downloaded file and finish the installer. The default choices are fine.
-4. Quit Terminal with **Command-Q**, then open it again from Spotlight. A window that was open during installation can miss the new program.
+- Open [https://nodejs.org/](https://nodejs.org/).
+- Download the macOS installer labeled **LTS**.
+- Open the downloaded file and finish the installer. The default choices are fine.
+- Quit Terminal with **Command-Q**, then open it again from Spotlight. A window that was open during installation can miss the new program.
 
 Check the install:
 
@@ -530,7 +527,7 @@ npm -v
 
 If Terminal says `command not found` for `node` or `npm`, quit Terminal with **Command-Q**, open a new window, and run `node -v` again.
 
-### 3. Install Git
+### Install Git
 
 Git is the program that downloads this project. In Terminal, run:
 
@@ -540,12 +537,11 @@ git --version
 
 If macOS asks to install developer tools, choose **Install** and wait until it finishes. Then run `git --version` again. A version number means git is ready.
 
-### 4. Put the project on this computer
+### Put the project on this computer
 
 In Terminal, run:
 
 ```bash
-cd
 git clone https://github.com/vctrch/WebsiteForZosh.git
 cd WebsiteForZosh
 pwd
@@ -553,10 +549,10 @@ pwd
 
 What each line does:
 
-1. `cd` with nothing after it returns to your home folder.
-2. `git clone` copies the project from GitHub into a new folder named `WebsiteForZosh`.
-3. `cd WebsiteForZosh` moves into that folder.
-4. `pwd` prints the folder you are in.
+- `cd` with nothing after it returns to your home folder.
+- `git clone` copies the project from GitHub into a new folder named `WebsiteForZosh`.
+- `cd WebsiteForZosh` moves into that folder.
+- `pwd` prints the folder you are in.
 
 The end of the `pwd` line should be `WebsiteForZosh`. An example is `/Users/yourname/WebsiteForZosh`.
 
@@ -564,7 +560,7 @@ If `git clone` says the destination already exists, the folder is already there.
 
 You can also see the folder in Finder, in your home folder.
 
-### 5. Install this project's files
+### Install this project's files
 
 Run this once, from the `WebsiteForZosh` folder:
 
@@ -578,7 +574,7 @@ You should see a short summary that ends with the number of packages added. Leav
 
 Run `npm install` again later only after `package.json` changes.
 
-### 6. Start the website
+### Start the website
 
 In the same Terminal window, run:
 
@@ -596,10 +592,10 @@ The printed address may say `localhost` or `127.0.0.1`. Those are the same compu
 
 Open that address in Safari or Chrome:
 
-1. In Terminal, select the address.
-2. Press **Command-C** to copy it.
-3. Open Safari or Chrome.
-4. Click the address bar, press **Command-V**, and press **Return**.
+- In Terminal, select the address.
+- Press **Command-C** to copy it.
+- Open Safari or Chrome.
+- Click the address bar, press **Command-V**, and press **Return**.
 
 You should see the Zosh page, with the heading "A calmer kind of website."
 
@@ -609,16 +605,16 @@ Keep the Terminal window open. Closing it stops the site.
 
 To stop the site, click the Terminal window and press **Control-C**.
 
-### 7. Change the words and see the result
+### Change the words and see the result
 
 Keep `npm run dev` running.
 
-1. Open Finder.
-2. Open your home folder, then **WebsiteForZosh**, then **src**.
-3. Right-click `content.ts`, choose **Open With**, then **TextEdit**.
-4. Choose **Format**, then **Make Plain Text**, before you change anything. Plain text keeps the file as code.
-5. Change the text inside the quotes. The page heading is `hero.title`. The menu labels are `navItems`.
-6. Save with **Command-S**.
+- Open Finder.
+- Open your home folder, then **WebsiteForZosh**, then **src**.
+- Right-click `content.ts`, choose **Open With**, then **TextEdit**.
+- Choose **Format**, then **Make Plain Text**, before you change anything. Plain text keeps the file as code.
+- Change the text inside the quotes. The page heading is `hero.title`. The menu labels are `navItems`.
+- Save with **Command-S**.
 
 The browser refreshes the page on its own. You do not need to run `npm run dev` again.
 
@@ -632,14 +628,13 @@ Other files you may want later:
 | `src/App.tsx` | The order of the sections |
 | `index.html` | The browser-tab title |
 
-### 8. Run the tests
+### Run the tests
 
 A test is an automatic check. These tests confirm the page shows its sections and the contact form asks for a name, a real email address, and a message of at least 10 characters.
 
 `npm run dev` keeps its Terminal window busy. Press **Command-N** to open a second Terminal window. In that window, run:
 
 ```bash
-cd
 cd WebsiteForZosh
 npm test
 ```
@@ -654,7 +649,7 @@ npm run test:watch
 
 Stop watch mode with **Control-C**.
 
-### 9. Build a finished copy
+### Build a finished copy
 
 The development site in step 6 is for editing. A build is the finished copy of the site.
 
@@ -706,11 +701,11 @@ In Terminal:
 
 **Ctrl+C** copies in some other apps. In this Terminal, **Ctrl+C** stops a running command. **Ctrl+Shift+C** copies.
 
-### 1. Open Terminal
+### Open Terminal
 
-1. Open the app menu.
-2. Type `Terminal`.
-3. Open **Terminal**.
+- Open the app menu.
+- Type `Terminal`.
+- Open **Terminal**.
 
 This window starts in your home folder. Check that with:
 
@@ -720,7 +715,7 @@ pwd
 
 The line looks like `/home/yourname`. `yourname` is your Linux user name.
 
-### 2. Install Node.js
+### Install Node.js
 
 Node.js is the program that installs this project's tools and starts the website. npm comes with Node.js. npm is the command that downloads those tools.
 
@@ -775,7 +770,7 @@ If Terminal says `nvm: command not found`, close every Terminal window, open one
 
 If Terminal says `node: command not found`, run `nvm install 24` again in that same new window.
 
-### 3. Check Git
+### Check Git
 
 Git is the program that downloads this project. Step 2 installed it. Check it with:
 
@@ -785,12 +780,11 @@ git --version
 
 A version number means git is ready.
 
-### 4. Put the project on this computer
+### Put the project on this computer
 
 In Terminal, run:
 
 ```bash
-cd
 git clone https://github.com/vctrch/WebsiteForZosh.git
 cd WebsiteForZosh
 pwd
@@ -798,10 +792,10 @@ pwd
 
 What each line does:
 
-1. `cd` with nothing after it returns to your home folder.
-2. `git clone` copies the project from GitHub into a new folder named `WebsiteForZosh`.
-3. `cd WebsiteForZosh` moves into that folder. The capital letters matter. `websiteforzosh` is a different name.
-4. `pwd` prints the folder you are in.
+- `cd` with nothing after it returns to your home folder.
+- `git clone` copies the project from GitHub into a new folder named `WebsiteForZosh`.
+- `cd WebsiteForZosh` moves into that folder. The capital letters matter. `websiteforzosh` is a different name.
+- `pwd` prints the folder you are in.
 
 The end of the `pwd` line should be `WebsiteForZosh`. An example is `/home/yourname/WebsiteForZosh`.
 
@@ -809,7 +803,7 @@ If `git clone` says the destination already exists, the folder is already there.
 
 You can also see the folder in the file manager, in your home folder.
 
-### 5. Install this project's files
+### Install this project's files
 
 Run this once, from the `WebsiteForZosh` folder:
 
@@ -823,7 +817,7 @@ You should see a short summary that ends with the number of packages added. Leav
 
 Run `npm install` again later only after `package.json` changes.
 
-### 6. Start the website
+### Start the website
 
 In the same Terminal window, run:
 
@@ -841,10 +835,10 @@ The printed address may say `localhost` or `127.0.0.1`. Those are the same compu
 
 Open that address in Firefox or Chrome:
 
-1. In Terminal, select the address.
-2. Press **Ctrl+Shift+C** to copy it.
-3. Open Firefox or Chrome.
-4. Click the address bar, press **Ctrl+V**, and press **Enter**.
+- In Terminal, select the address.
+- Press **Ctrl+Shift+C** to copy it.
+- Open Firefox or Chrome.
+- Click the address bar, press **Ctrl+V**, and press **Enter**.
 
 You should see the Zosh page, with the heading "A calmer kind of website."
 
@@ -854,15 +848,15 @@ Keep the Terminal window open. Closing it stops the site.
 
 To stop the site, click the Terminal window and press **Ctrl+C**.
 
-### 7. Change the words and see the result
+### Change the words and see the result
 
 Keep `npm run dev` running.
 
-1. Open the file manager.
-2. Open your home folder, then **WebsiteForZosh**, then **src**.
-3. Right-click `content.ts` and open it with **Text Editor**.
-4. Change the text inside the quotes. The page heading is `hero.title`. The menu labels are `navItems`.
-5. Save with **Ctrl+S**.
+- Open the file manager.
+- Open your home folder, then **WebsiteForZosh**, then **src**.
+- Right-click `content.ts` and open it with **Text Editor**.
+- Change the text inside the quotes. The page heading is `hero.title`. The menu labels are `navItems`.
+- Save with **Ctrl+S**.
 
 The browser refreshes the page on its own. You do not need to run `npm run dev` again.
 
@@ -876,14 +870,13 @@ Other files you may want later:
 | `src/App.tsx` | The order of the sections |
 | `index.html` | The browser-tab title |
 
-### 8. Run the tests
+### Run the tests
 
 A test is an automatic check. These tests confirm the page shows its sections and the contact form asks for a name, a real email address, and a message of at least 10 characters.
 
 `npm run dev` keeps its Terminal window busy. Open Terminal again from the app menu. In the new window, run:
 
 ```bash
-cd
 cd WebsiteForZosh
 npm test
 ```
@@ -898,7 +891,7 @@ npm run test:watch
 
 Stop watch mode with **Ctrl+C**.
 
-### 9. Build a finished copy
+### Build a finished copy
 
 The development site in step 6 is for editing. A build is the finished copy of the site.
 

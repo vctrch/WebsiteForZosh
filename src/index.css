@@ -259,22 +259,19 @@ textarea {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  align-items: start;
 }
 
 .card {
-  padding: 1.4rem;
+  padding: 1.35rem 1.4rem 1.25rem;
   border: 1px solid var(--line);
   border-radius: 22px;
   background: var(--card);
   box-shadow: var(--shadow);
 }
 
-.card-index,
-.step-index {
-  margin-bottom: 1.5rem;
-  color: var(--accent);
-  font-family: var(--serif);
-  font-size: 1.2rem;
+.card h3 {
+  margin-bottom: 0.55rem;
 }
 
 .card p:last-child,
@@ -285,6 +282,12 @@ textarea {
 
 .approach-grid {
   align-items: start;
+  grid-template-columns: minmax(14rem, 0.75fr) 1.25fr;
+  gap: 1.25rem 2.5rem;
+}
+
+.approach-grid .section-heading {
+  margin-bottom: 0;
 }
 
 .steps {
@@ -294,19 +297,16 @@ textarea {
 }
 
 .steps li {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-  padding: 1.15rem 0;
+  padding: 0.85rem 0 0.95rem;
   border-top: 1px solid var(--line);
+}
+
+.steps h3 {
+  margin-bottom: 0.3rem;
 }
 
 .steps li:last-child {
   border-bottom: 1px solid var(--line);
-}
-
-.step-index {
-  margin: 0.15rem 0 0;
 }
 
 .contact-grid {
@@ -383,6 +383,10 @@ textarea {
   .contact-grid,
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .approach-grid .section-heading {
+    margin-bottom: 1.25rem;
   }
 
   .hero {

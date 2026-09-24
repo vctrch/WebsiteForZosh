@@ -9,9 +9,8 @@ export function Work() {
           <h2 id="work-title">What the page is for</h2>
         </div>
         <div className="cards">
-          {workItems.map((item, index) => (
+          {workItems.map((item) => (
             <article className="card" key={item.title}>
-              <p className="card-index">{String(index + 1).padStart(2, '0')}</p>
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
             </article>
